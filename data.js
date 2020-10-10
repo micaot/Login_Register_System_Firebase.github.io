@@ -25,14 +25,13 @@
   let rform = document.querySelector('.register-form');
 
   rform.addEventListener('submit',(e)=>{
-    e.preventDefault();
     db.collection('users').add({
       name: rform.name.value,
       email: rform.email.value,
       username: rform.username.value,
       password: rform.password.value
     }).then(()=>{
-      window.location.href='https://piyushbarve98.github.io/Login_Register_System_Firebase.github.io/login.html';
+      alert('data uploaded');
     })
    
   });
