@@ -32,7 +32,7 @@
       username: rform.username.value,
       password: rform.password.value
     }).then(()=>{
-      window.location.href='/login.html';
+      window.location.href='https://piyushbarve98.github.io/Login_Register_System_Firebase.github.io/login.html';
     })
    
   });
