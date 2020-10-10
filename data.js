@@ -42,18 +42,17 @@
   let lform = document.querySelector('.login-form');
  
   lform.addEventListener('submit',(e)=>{
-  
     db.collection('users').where('username','==',lform.username.value).where('password','==',lform.password.value).get().then((snapshot)=>{
       
       
       if(snapshot.size){
         alert('Data Matched login Success');
-        return true;
+        
         
       }
       else{
         alert('Login Failed');
-        return false;
+        e.preventDefault();
       
       }
   });
