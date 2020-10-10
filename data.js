@@ -39,23 +39,28 @@
   }
   // login check from database does data matches or not
   function getData(){
+    
   let lform = document.querySelector('.login-form');
  
   lform.addEventListener('submit',(e)=>{
+    e.preventDefault();
     db.collection('users').where('username','==',lform.username.value).where('password','==',lform.password.value).get().then((snapshot)=>{
       
       
       if(snapshot.size){
         alert('Data Matched login Success');
+        return true;
         
         
       }
       else{
-        alert('Login Failed');
         e.preventDefault();
+        alert('Login Failed');
+        return false;
       
       }
   });
  
   });
 }
+
